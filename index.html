@@ -23,12 +23,21 @@
         <li>history 查看当前操作命令历史</li>
         <li>> 和 >>重定向 >替换式  >>追加式</li>
         <li>grep 正则</li>
+        <li>clear 清屏</li>
+        <li>esc :qw保存推出编辑窗口</li>
     </ul>
     <pre>
         首先：初始首次的用户名和邮箱后
         打开一个文件夹，实用git init 设置成我们的仓库
         然后用代码编辑器新建一个文件。
-        git status 查看状态
+        第一步，用命令git add告诉Git，把文件添加到仓库：
+        git add .
+        第二步，用命令git commit告诉Git，把文件提交到仓库：
+        $ git commit -m "一句描述"
+        git status 查看状态如果有更新的，会显示红色的名字
+        查看被更新的文件哪些东西更新了呢？
+        git diff;
+
     </pre>
 </body>
 </html>
