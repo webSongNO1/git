@@ -5,6 +5,7 @@
     <title>bash命令行</title>
 </head>
 <body>
+    <a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000">参考大神的教程</a>
     <ul>
         <li>pwd:返回当前目录地址</li>
         <li>cd:切换目录；cd .. 返回上级</li>
@@ -58,6 +59,21 @@
     <pre>
         <h2>删除操作</h2>
         如果删除版本库里的文件，使用git rm,并且git commit
+    </pre>
+    <pre>
+        <h2>关联远程仓库：github为例</h2>
+        1.首先再用户目录下找到.ssh
+        2.如果.ssh文件夹里没有id_rsa和id_rsa.pub文件，需要在git bash命令行里输入：
+        ssh-keygen -t rsa -C "自己邮箱"
+        此时就有了这两个文件；
+        其中id_rsa.pub文件是公钥，需要一会儿黏贴在gitbug上的。
+        3.账户设置里找到ssh添加一个ssh公钥，把id_rsa.pub代码弄进去保存密钥。
+        4.在gitbug上建立新的仓库；
+        创建完毕后，看着github教程自己操作就关联上了。
+        5.然后呢，除了第一次要：
+        git push -u origin master
+        之后就可以简单的git push origin master
+
     </pre>
 </body>
 </html>
