@@ -73,7 +73,13 @@
         5.然后呢，除了第一次要：
         git push -u origin master
         之后就可以简单的git push origin master
-
+        就在刚刚，我发现每次我提交到远程仓库都要登陆。。。
+        这怎么可以呢。
+        看来github给的教程也不行，于是百度之：
+        很多前辈说是用https提交就是这样，改成之前的ssh提交方式，于是我用了这几行代码：
+        git remote rm 远程仓库名（就是你每次提交的那个名字）
+        git remote add （远程仓库名：自己取） git@github.com:username/repository.git
+        git push -u 远程仓库名 master
     </pre>
 </body>
 </html>
