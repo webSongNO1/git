@@ -92,6 +92,26 @@
         此时：修改了一些内容后，然后add commit后，其实是操作的分支
         3.切换回来
         git checkout master
+        切换回来发现没有了是不是，对的，因为那是操作的分支dev
+        4.先找我们来合并分支
+        git merge dev
+        5.删除分支
+        git branch -d dev
+
+        **********
+        查看分支：git branch
+
+创建分支：git branch <name>
+
+切换分支：git checkout <name>
+
+创建+切换分支：git checkout -b <name>
+
+合并某分支到当前分支：git merge <name>
+
+删除分支：git branch -d <name>
+        6.解决冲突
+
     </pre>
 </body>
 </html>
