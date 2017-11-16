@@ -15,21 +15,29 @@
         <li>mkdir 文件夹名;创建目录</li>
         <li>touch 文件名；创建文件；touch 路径/文件名</li>
         <li>cat 文件名;查看文件内容</li>
+         <li>head -5 文件名==查看文件的前五行</li>
+        <li>tail -5 文件名==查看文件后五行</li>
         <li>rm 文件名;删除文件 rm -r 文件夹/ ==删除路径下所有文件</li>
         <li>rmdir 文件夹名;只能删除空文件夹</li>
         <li>mv 文件名 文件夹 ==移动；mv 路径/文件名 文件夹/重命名文件名 </li>
         <li>cp 拷贝和mv用法一样</li>
-        <li>head -5 文件名==查看文件的前五行</li>
-        <li>tail -5 文件名==查看文件后五行</li>
         <li>history 查看当前操作命令历史</li>
         <li>> 和 >>重定向 >替换式  >>追加式</li>
         <li>grep 正则</li>
         <li>clear 清屏</li>
-        <li>esc :qw保存推出编辑窗口</li>
+        <li>git remote 查看有几个远程库;git remote show [name]查看该仓库详细信息</li>
+        <li>
+            git vim 编辑器基本操作: vi 文件名.后缀
+            按 a, i 或 o 进入编辑模式
+            按 ESC 进入操作模式
+            在操作模式下，:wq 为写入退出，:q! 不保存退出
+        </li>
     </ul>
     <pre>
         <h2>初始和添加基本操作</h2>
         1.首先：初始首次的用户名和邮箱后
+            git config --global user.name "name"
+            git config --global user.email "email@example.com"
         2.打开一个文件夹，实用git init 设置成我们的仓库
         3.然后用代码编辑器新建一个文件。
         4.第一步，
@@ -63,14 +71,18 @@
     <pre>
         <h2>关联远程仓库：github为例</h2>
         1.首先再用户目录下找到.ssh
-        2.如果.ssh文件夹里没有id_rsa和id_rsa.pub文件，需要在git bash命令行里输入：
+        2.如果.ssh文件夹里没有id_rsa和id_rsa.pub文件，或者也没有.ssh文件夹，需要在git bash命令行里输入：
         ssh-keygen -t rsa -C "自己邮箱"
+        *如果没有.ssh文件夹，那么第一次需要连续按三个回车。
         此时就有了这两个文件；
         其中id_rsa.pub文件是公钥，需要一会儿黏贴在gitbug上的。
         3.账户设置里找到ssh添加一个ssh公钥，把id_rsa.pub代码弄进去保存密钥。
         4.在gitbug上建立新的仓库；
-        创建完毕后，看着github教程自己操作就关联上了。
-        5.然后呢，除了第一次要：
+        语法： git remote add origin git@server-name:path/repo-name.git
+        //origin默认是这个名字，可以自己取；@server-name是服务器名字这里写github.com；
+        path/repo-name.git是自己的地址；
+        例子：git remote add websong01 git@github.com:username/repository.git
+        5.除了第一次要：
         git push -u origin master
         之后就可以简单的git push origin master
         就在刚刚，我发现每次我提交到远程仓库都要登陆。。。
